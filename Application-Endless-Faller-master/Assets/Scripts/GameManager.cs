@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -30,6 +30,6 @@ public class GameManager : MonoBehaviour
     {
         fadeFx.Fade(false);
         yield return new WaitForSeconds(1);
-        EditorSceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 }

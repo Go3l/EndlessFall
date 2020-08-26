@@ -1,20 +1,19 @@
 ﻿using System.Collections;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private string menuScene;
-    [SerializeField] private string gameScene;
-
     [HideInInspector] public static bool isGameOver;
     [HideInInspector] public static bool isPaused;
-    private int score;
-    private bool isLoadingLevel = false;
-
     public UIManager uiManager;
     public FadeEffect fadeFx;
 
+    private int score;
+    private bool isLoadingLevel = false;
+
+    private const string menuScene = "Home";
+    private const string gameScene = "Game";
 
     private void Start()
     {
@@ -90,6 +89,6 @@ public class LevelManager : MonoBehaviour
 
         isLoadingLevel = true;
         yield return new WaitForSeconds(1);
-        EditorSceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 }

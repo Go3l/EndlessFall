@@ -27,21 +27,20 @@ public class UIManager : MonoBehaviour
     public void GameOverPanel(int score)
     {
         LastScoreGameOverText.text = "Last Score: " + SaveData.GetLastScore();
+        SaveData.SaveLastScore(score);
 
         if (score > SaveData.GetHighScore())
         {
-            SaveData.SaveScore(true, score);
+            SaveData.SaveHighScore(score);
             ScoreGameOverText.text = "Score: " + score + " !!New Record!!";
         }
         else
         {
-            SaveData.SaveScore(false, score);
             ScoreGameOverText.text = "Score: " + score;
         }
 
         scoreContainer.SetActive(false);
         gameOverPanel.SetActive(true);
-
     }
 
     public void PausePanel(bool ispaused)

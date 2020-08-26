@@ -1,0 +1,18 @@
+- Set Limits where Player lose the Game - (5min)
+- Score when player cross a platform - (5min)
+- Creating a Pool system for platforms - (15min)
+- instantiating prefabs of platforms - (15min)
+- resizing randomly Moving Platform - (10min)
+- Game Over - (15min)
+- uiManager - (30min)
+
+
+- Problems that I ran into:
+
+- Change the pivot of the cubes to make the random sizing work. *(I created an empty parent object for each of the platforms,
+changing the position of each platform and then just resizing the parent object to resize the desired side of the cube)
+
+- Stop Player going through walls *(I Limited the movement of the player to avoid touching the walls)
+
+- When I set the Scoring Up, I was checking the position of player and platform ( when the player.position.y < platform.position.y, should score up), I had unexpected behaviors,
+like repetition of scoring up even using bools to avoid it,so I decided to set it with colliders ( OnCollisionExit).
